@@ -1,0 +1,18 @@
+<h1>All About <%= donut.name %></h1>
+
+<img src="<%= donut.image %>" alt="donut">
+
+<p><strong>Type:</strong> <%= donut.type %></p>
+<p><strong>Frosting:</strong> <%= donut.frosting %></p>
+<p><strong>Description:</strong> <%= donut.description %></p>
+
+<hr>
+
+<h2>Where can this donut be eaten?</h2>
+
+<h3>
+    <a href="/shops/<%= donut.shop.id %>">
+        <%= donut.shop.name %>
+    </a>
+</h3>
+<p><%= donut.shop.description %></p>

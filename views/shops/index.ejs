@@ -1,0 +1,13 @@
+<h1>All Shops</h1>
+
+<div class="row">
+    <% shops.forEach(s => { %>
+        <div class="col s3">
+            <div class="card blue lighten-3">
+                <a href="/shops/<%=s.id%>">
+                <%= s.name %>
+                </a>
+            </div>
+        </div>
+    <% }) %>
+</div>

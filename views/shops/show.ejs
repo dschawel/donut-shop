@@ -1,0 +1,31 @@
+<h1><%= shop.name %></h1>
+<div class="row">
+    <div class="col s4">
+        <img alt="shop pic" class="responsive-img" src="<%= shop.image %>">
+    </div>
+    <div class="col s8">
+        <p><strong>Specialty:</strong><%= shop.specialty %></p>
+        <p><%= shop.description %></p>
+    </div>
+</div>
+
+<hr>
+<h2>Donut Selection</h2>
+
+<% shop.donuts.forEach(d => { %>
+    <h3><%= d.name %></h3>
+    <img src="<%=d.image%>" alt="a donut probably">
+<% }) %>
+
+<hr>
+<h2>Add a Donut</h2>
+
+<form action="/donuts" method="POST">
+    Name: <input name="name">
+    Type: <input name="type">
+    Frosting: <input name="frosting">
+    Description: <input name="description">
+    Image: <input name="image">
+    <input type="hidden" name="shopId" value="<%=shop.id%>">
+    <input type="submit">
+</form>
